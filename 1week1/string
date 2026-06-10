@@ -1,0 +1,26 @@
+# 1. Strings are Arrays (You can access individual characters)
+text = "Python Programming"
+print("First letter:", text[0])
+print("Length of string:", len(text))
+
+# 2. Slicing Strings
+# Get characters from position 2 to 6 (not included)
+print("Slicing (2 to 6):", text[2:6])
+
+# 3. Modifying Strings
+upper_text = text.upper()
+lower_text = text.lower()
+strip_text = "   Hello   ".strip() # Removes whitespaces from start/end
+print("Upper:", upper_text)
+print("Stripped:", strip_text)
+
+# 4. String Concatenation
+greeting = "Hello"
+name = "Alice"
+combined = greeting + ", " + name + "!"
+print("Concatenation:", combined)
+
+# 5. F-Strings (The modern way to format strings)
+age = 22
+intro = f"My name is {name}, and I am {age} years old."
+print("F-String format:", intro)
