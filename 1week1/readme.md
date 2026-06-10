@@ -21,7 +21,7 @@ This repository contains the completed tasks for Practice 1, focusing on setting
      * `numbers_test.py` – Numeric types (int, float, complex) and the `random` module.
      * `strings_demo.py` – Slicing, modifying, concatenating, and formatting f-strings.
 
-## 🛠️ How to Run the Code
+## How to Run the Code
 
 To execute any of the Python scripts, run the following command in your terminal:
 
