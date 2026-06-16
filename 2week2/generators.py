@@ -1,35 +1,47 @@
-#!/usr/bin/env python3
+#Task no1
+def square_generator(n):
+    for i in range(1, n + 1):
+        yield i ** 2
 
-# generators.py
+a = int(input())
 
-# 1. Iterator Class (Stops after 20 as shown in the text)
-class MyNumbers:
-    def __iter__(self):
-        self.a = 1
-        return self
+for num in square_generator(a):
+    print(num)
 
-    def __next__(self):
-        if self.a <= 20:
-            x = self.a
-            self.a += 1
-            return x
-        else:
-            raise StopIteration
+#Task no2
+def even_generator(n):
+    for i in range(0, n + 1):
+        if i % 2 == 0:
+            yield i
 
-print("--- Testing Iterator Class ---")
-myclass = MyNumbers()
-myiter = iter(myclass)
-for x in myiter:
-    print(x, end=" ")
-print("\n")
+n_input = int(input())
+result = ", ".join(str(num) for num in even_generator(n_input))
+print(result)
 
+#Task no3
+def divisible_by_3_and_4(n):
+    for i in range(0, n + 1):
+        if i % 3 == 0 and i % 4 == 0:
+            yield i
 
-# 2. Generator Function using the 'yield' keyword
+for num in divisible_by_3_and_4(int(input())):
+    print(num)
+
+#Task no4
+
+def squares(a,b):
+    for i in range(a,b+1):
+        yield i**2
+a_input = int(input())
+b_input = int(input())
+
+for val in squares(a_input, b_input):
+    print(val)
+
+#Task no5
 def countdown(n):
-    print("--- Starting yield generator ---")
-    while n > 0:
-        yield n
-        n -= 1
+    for i in range(n, -1, -1):
+        yield i
 
-for num in countdown(5):
-    print(f"Countdown: {num}")
+for num in countdown(int(input())):
+    print(num)
