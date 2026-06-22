@@ -2,18 +2,12 @@ import re
 import json
 
 def parse_price(price_str):
-    """
-    Cleans the price string by removing non-breaking spaces (\xa0),
-    regular spaces, and replaces the comma with a dot for float conversion.
-    """
     return float(price_str.replace('\xa0', '').replace(' ', '').replace(',', '.'))
 
 def parse_receipt(filename="raw.txt"):
     with open(filename, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Pattern to sequentially match item blocks.
-    # Structure of each item block in the receipt:
     # [Item Number]. \n [Product Name] \n [Qty] x [Unit Price] \n [Total Price] \n Стоимость \n [Repeated Total Price]
     item_pattern = re.compile(
         r'^\d+\.\s*\n'                       # Line 1: Item number (e.g., 1.) at the start of a line
